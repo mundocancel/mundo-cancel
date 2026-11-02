@@ -1,0 +1,19 @@
+{
+  "name": "Mundo Cancel | Sistemas de Aluminio y Cristal",
+  "short_name": "Mundo Cancel",
+  "description": "Sistemas de aluminio y cristal. Cotiza en segundos con el cotizador visual.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#2c2c2c",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

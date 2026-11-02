@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias y builds (por si luego agregas tooling)
+node_modules/
+dist/
+.cache/
+
+# Logs y variables de entorno
+*.log
+.env
+.env.*

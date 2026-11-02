@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada | Mundo Cancel</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #2c2c2c; --gold: #c8a96e; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1.5rem;
+    text-align: center; padding: 2rem; background: #fafafa; color: #1a1a1a;
+  }
+  .logo-icon {
+    width: 56px; height: 56px; border-radius: 16px; color: #fff;
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.4rem; margin: 0 auto 1rem;
+  }
+  .code { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; }
+  p { color: #555; max-width: 420px; line-height: 1.7; }
+  .btn {
+    display: inline-block; padding: 0.9rem 2.2rem; background: var(--accent); color: #fff;
+    text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.18); }
+</style>
+</head>
+<body>
+  <div class="logo-icon">MC</div>
+  <div class="code">Error 404</div>
+  <h1>Esta página no existe</h1>
+  <p>Puede que la dirección esté mal escrita o que el contenido se haya movido. Vuelve al inicio para seguir cotizando.</p>
+  <!-- En un sitio de proyecto (usuario.github.io/repo) cambia href="./" por "/repo/" -->
+  <a href="./" class="btn">Volver al inicio</a>
+</body>
+</html>
