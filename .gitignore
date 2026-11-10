@@ -15,3 +15,10 @@ dist/
 *.log
 .env
 .env.*
+
+# Capturas y artefactos locales de pruebas
+/preview*.png
+/w*.png
+/dpr*.png
+/_fresh-show.png
+/marca-de-agua/
