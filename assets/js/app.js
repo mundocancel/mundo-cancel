@@ -342,36 +342,26 @@ function initAnimations() {
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
     });
 
-    // fromTo con valores finales explícitos: con `from`, si el tween se
-    // inicializa cuando el elemento ya está en opacity 0, termina en 0 y la
-    // sección se queda invisible. `clearProps` devuelve el control al CSS
-    // (necesario para el :hover con transform de las tarjetas).
-    gsap.fromTo('.category-card',
-      { opacity: 0, y: 60 },
-      {
-        opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out',
-        clearProps: 'opacity,transform',
-        scrollTrigger: { trigger: '.categories-grid', start: 'top 85%', toggleActions: 'play none none none' }
-      }
-    );
+    // `immediateRender: false` es la clave: el estado inicial (opacity 0) NO se
+    // aplica al cargar, solo cuando el ScrollTrigger se activa. Así el contenido
+    // es visible por defecto y la animación es un extra; si ScrollTrigger nunca
+    // dispara (JS a medias, scroll restaurado, captura full-page), no se queda
+    // en blanco. `clearProps` devuelve el control al CSS para el :hover.
+    const reveal = (selector, y, duration, stagger, start) => {
+      gsap.fromTo(selector,
+        { opacity: 0, y },
+        {
+          opacity: 1, y: 0, duration, stagger, ease: 'power3.out',
+          immediateRender: false,
+          clearProps: 'opacity,transform',
+          scrollTrigger: { trigger: selector, start, once: true }
+        }
+      );
+    };
 
-    gsap.fromTo('.cotizador-section',
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
-        clearProps: 'opacity,transform',
-        scrollTrigger: { trigger: '.cotizador-section', start: 'top 80%', toggleActions: 'play none none none' }
-      }
-    );
-
-    gsap.fromTo('.inteligente-section',
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1, y: 0, duration: 1, ease: 'power3.out',
-        clearProps: 'opacity,transform',
-        scrollTrigger: { trigger: '.inteligente-section', start: 'top 85%', toggleActions: 'play none none none' }
-      }
-    );
+    reveal('.category-card', 60, 0.8, 0.08, 'top 85%');
+    reveal('.cotizador-section', 40, 0.9, 0, 'top 80%');
+    reveal('.inteligente-section', 50, 1, 0, 'top 85%');
   } catch (err) {
     console.warn('Animaciones desactivadas:', err);
   }
